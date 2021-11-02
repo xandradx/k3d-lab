@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app01
+  name: app01
+  namespace: demoapp01
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app01
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app01
+    spec:
+      containers:
+      - image: quay.io/jandrade/democontainerapp:main-003a735
+        name: democontainerapp
+        resources:
+          requests:
+            cpu: 10m
+            memory: 10Mi
+          limits:
+            cpu: 100
+            memory: 128Mi
