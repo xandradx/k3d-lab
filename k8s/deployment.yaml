@@ -18,7 +18,7 @@ spec:
         app: app01
     spec:
       containers:
-      - image: quay.io/jandrade/democontainerapp:latest
+      - image: quay.io/jandrade/democontainerapp:v1.0
         name: democontainerapp
         resources:
           requests:
