@@ -7,7 +7,7 @@
 * kubectl 1.18+
 * ~2GB RAM (puede ser una Maquina Virtual)
 
-## k3s
+## k3s ![logo](./images/3ks.png)
 
 * Distribución de Kubernetes liviana (k3s vs k8s)
 * 1 Binario ~200mb
