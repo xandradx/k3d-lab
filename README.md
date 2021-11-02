@@ -1,5 +1,18 @@
 # 3kd-lab
 
+Clonar este repositorio
+
+```bash
+git clone https://github.com/xandradx/k3d-lab.git
+```
+
+Estructura
+
+```
+|
+`-- k8s/ <----  Manifiestos Kubernetes
+```
+
 ## Requerimientos 
 
 * Ubuntu 20.04
