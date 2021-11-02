@@ -68,6 +68,13 @@ k3d es una utilidad diseñada para ejecutar fácilmente k3s en Docker, proporcio
  sudo curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
  ```
 
+ ***Autocompletación k3d***
+
+```
+sudo sh -c "k3d completion bash > /etc/bash_completion.d/k3d"
+source /etc/bash_completion.d/k3d
+```
+
 # Creando mi primer cluster con k3d
 
 Selecciones un puerto en su maquina para mapear el puerto del balanceador de carga al puerto 80 del balanceador de carga "loadbalancer"
@@ -241,6 +248,8 @@ INFO[0000] Successfully deleted cluster cluster-demo!
 
 No elimine este cluster si quiere seguir la siguinete seccón para publicar nuetra primera app en Kuberetes.
 
+
+# Publicando nuestra primera aplicación en Kubernetes
 
 
 
