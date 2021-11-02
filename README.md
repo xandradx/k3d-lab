@@ -23,6 +23,21 @@
 
 ## Preparación de Requerimientos
 
+### Linux
+
+Actualizar el Sistema Operativo
+
+```
+sudo apt-get update
+sudo apt-get dist-upgrade -y
+
+```
+
+Reiniciar si se ha instalado una versión más reciente del kernel.
+
+
+
+
 ### Docker
 
 ```
@@ -31,7 +46,7 @@ MY_USER=$(whoami)
 sudo usermod -a -G docker ${MY_USER}
 ```
 
-Validar que el usuario actual pertenezca al grupo docker 
+Validar que el usuario actual pertenezca al grupo docker.
 
 ```
 id ${MY_USER}
@@ -227,6 +242,23 @@ cluster-demo   0/1       0/2      true
 helloworld     3/3       2/2      true
 ```
 
+## Iniciar clusters
+
+```
+k3d cluster start cluster-demo
+```
+
+```bash
+INFO[0000] Using the k3d-tools node to gather environment information
+INFO[0000] Starting new tools node...
+INFO[0000] Starting Node 'k3d-cluster-demo-tools'
+INFO[0000] HostIP: using network gateway...
+INFO[0000] Starting cluster 'cluster-demo'
+INFO[0000] Starting servers...
+...
+```
+
+
 ## Eliminar clusters
 
 ```
@@ -246,10 +278,7 @@ INFO[0000] Removing standalone kubeconfig file (if there is one)...
 INFO[0000] Successfully deleted cluster cluster-demo!
 ```
 
-No elimine este cluster si quiere seguir la siguinete seccón para publicar nuetra primera app en Kuberetes.
-
-
-# Publicando nuestra primera aplicación en Kubernetes
+No elimine este cluster si quiere seguir ![la siguiente sección](LAB01.md) para publicar nuestra primera app en Kuberetes.
 
 
 
