@@ -394,7 +394,7 @@ Este puerto es el que definimos par el load Balancer de k3d
 Salida del comando:
 
 ```
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  5120  100  5120 <!DOCTYPE html> 0      0 --:--:-- --:--:-- --:--:--     0
  <html>
