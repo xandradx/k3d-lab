@@ -31,8 +31,14 @@ Estructura
   * IoT
   * Appliances
 * Ideal para Edge Computing
-* Certificado por CNCF y ha sido ya ofrecido para donación a la fundación. https://github.com/cncf/toc/pull/447
+* Certificado por CNCF y 	Nivel de madurez Sandbox (8/19/2020) 
 * Enfocado en la simplicidad
+
+### ¿Cómo funciona?
+
+![Diagrama](./images/k3s-diagram1.png)
+
+[Más información](https://rancher.com/docs/k3s/latest/en/architecture/)
 
 ## Preparación de Requerimientos
 
@@ -90,6 +96,10 @@ source /etc/bash_completion.d/kubectl
 
 ### k3d
 
+#### Demo Cluster Arquitecture
+
+![Diagram](./images/k3s-architecture-single-server.png)
+
 k3d es una herramienta diseñada para ejecutar fácilmente k3s en Docker, proporciona una utileria de linea de comando simple para administrar un clúster de Kubernetes utilizando k3s, es ideal para ambientes de aprendizaje o iniciar con el desarrollo de aplicaciones que se ejecuten sobre Kubernetes.
 
 ```
@@ -119,7 +129,7 @@ En nuestro ejemplo:
 
 
 |     Opción   |              Descripción        |   Valor  |
-|--------------|:-------------------------------:|---------:|
+|:-------------|:--------------------------------|---------:|
 |agents        | Cantidad de workers             |  2       |  
 |servers       | Cantidad de masters             |  1       |
 |servers-memory| Memoria asignada a cada master  | OPCIONAL |
