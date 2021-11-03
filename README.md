@@ -90,7 +90,7 @@ source /etc/bash_completion.d/kubectl
 
 ### k3d
 
-k3d es una utilidad diseñada para ejecutar fácilmente k3s en Docker, proporciona una utileria de linea de comando simple para crear, ejecutar y eliminar un clúster de Kubernetes utilizando k3s.
+k3d es una herramienta diseñada para ejecutar fácilmente k3s en Docker, proporciona una utileria de linea de comando simple para administrar un clúster de Kubernetes utilizando k3s, es ideal para ambientes de aprendizaje o iniciar con el desarrollo de aplicaciones que se ejecuten sobre Kubernetes.
 
 ```
  sudo curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
