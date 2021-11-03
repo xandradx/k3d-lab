@@ -384,5 +384,27 @@ ingress.networking.k8s.io/app01 created
 
 ## Test App
 
-curl http://app01.192.168.223.187.nip.io:8080 # <-- Este puerto es el puerto en el que definimos que escuchraría el load Balancer de k3d
+
+### Curl
+
+```curl http://app01.192.168.223.187.nip.io:8080 | head```
+
+Este puerto es el que definimos par el load Balancer de k3d
+
+Salida del comando:
+
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  5120  100  5120 <!DOCTYPE html> 0      0 --:--:-- --:--:-- --:--:--     0
+ <html>
+   <head>
+     <title>Dashboard</title>
+0    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+...
+```
+
+### Browser
+
+![Test Page](./images/test-page.png)
 
