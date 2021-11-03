@@ -1,4 +1,4 @@
-# 3kd-lab
+# k3d-lab
 
 Clonar este repositorio
 
