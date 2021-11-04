@@ -408,3 +408,7 @@ Salida del comando:
 
 ![Test Page](./images/test-page.png)
 
+
+Siga con ![la siguiente sección](LAB02.md) para aprender a escalar y detectar cambios en nuestro deployment. 
+
+
