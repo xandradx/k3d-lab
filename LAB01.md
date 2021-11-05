@@ -79,7 +79,7 @@ namespace/demoapp01 configured
 Podemos obterner la defición del recurso creado ejecutando:
 
 ```
-kubectl get namespace demoapp01
+kubectl get namespace demoapp01 -o yaml
 ```
 
 Salida del comando:
