@@ -7,7 +7,7 @@ Todos los recursos de kubernetes los puede crear de dos maneras:
 * Imperativa: Ejecutando comandos para realizar la tarea deseada.
 * Declaratva: Creando un manifiesto de kubernetes en formato YAML, en donde se describe el estado del recurso.
 
-### Creación de Namespace:
+## Creación de Namespace:
 
 #### Imperativa:
 
@@ -154,7 +154,7 @@ metadata:
     lab: lab01
 ``` 
 
-Aplicamos los cambios:
+## Aplicamos los cambios
 
 ```kubectl apply -f k8s/namespace.yaml```
 
@@ -382,10 +382,10 @@ Salida del comando:
 ingress.networking.k8s.io/app01 created
 ```
 
-## Test App
+# Test App
 
 
-### Curl
+## Curl
 
 ```curl http://app01.192.168.223.187.nip.io:8080 | head```
 
@@ -404,7 +404,7 @@ Salida del comando:
 ...
 ```
 
-### Browser
+## Browser
 
 ![Test Page](./images/test-page.png)
 
