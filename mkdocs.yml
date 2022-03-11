@@ -1,0 +1,5 @@
+site_name: k3d Lab
+theme:
+  name: readthedocs
+nav:
+  - Home: 'README.md'
