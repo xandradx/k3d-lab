@@ -9,7 +9,7 @@ Todos los recursos de kubernetes los puede crear de dos maneras:
 
 ### Creación de Namespace:
 
-### Imperativa:
+#### Imperativa:
 
 ```bash
 kubectl create namespace demoapp01 --save-config
@@ -52,7 +52,7 @@ status:
 
 
 
-### Declarativa
+#### Declarativa
 
 En el directorio k8s/ encontrará el archivo ![namespace.yaml](k8s/namespace.yaml)
 
