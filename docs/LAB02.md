@@ -8,7 +8,7 @@ Editando la sección:
 spec:
   replicas: 1
 ```
-por
+remplazar por:
 
 ```yaml
 spec:
