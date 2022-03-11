@@ -22,7 +22,7 @@ jobs:
         image: k3d-lab
         tags: latest ${{ github.sha }}
         containerfiles: |
-          ./Dockefile
+          ./Dockerfile
 
     # Podman Login action (https://github.com/redhat-actions/podman-login) also be used to log in,
     # in which case 'username' and 'password' can be omitted.
