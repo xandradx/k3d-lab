@@ -15,7 +15,7 @@ Estructura
 
 ## Requerimientos 
 
-* Ubuntu 20.04
+* OpenSuse Leap 15.3+
 * Docker
 * kubectl 1.18+
 * ~2GB RAM (puede ser una Maquina Virtual)
@@ -47,22 +47,24 @@ Estructura
 Actualizar el Sistema Operativo
 
 ```
-sudo apt-get update
-sudo apt-get dist-upgrade -y
-
+sudo zypper up -y
 ```
 
-Reiniciar si se ha instalado una versión más reciente del kernel.
+Reiniciar si se ha instalado una versión más reciente del kernel o systemd.
 
+```
+sudo reboot; exit
+```
 
 
 
 ### Docker
 
 ```
-sudo apt-get install docker.io -y
+sudo zypper install -y docker
 MY_USER=$(whoami) 
 sudo usermod -a -G docker ${MY_USER}
+sudo systemctl enable --now docker
 ```
 
 Validar que el usuario actual pertenezca al grupo docker.
@@ -85,7 +87,7 @@ sudo chmod a+rx /usr/local/bin/kubectl
 Asegurese de tener instalado bash-completion o adapte las instrucciones para el shell que tenga en ejecución.
 
 ```
-sudo  apt-get install -y bash-completion 
+sudo  zypper install -y bash-completion 
 
 ```
 
