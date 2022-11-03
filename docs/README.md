@@ -6,16 +6,10 @@ Clonar este repositorio
 git clone https://github.com/xandradx/k3d-lab.git
 ```
 
-Estructura
-
-```
-|
-`-- k8s/ <----  Manifiestos Kubernetes
-```
 
 ## Requerimientos 
 
-* OpenSuse Leap 15.3+
+* OpenSuse Leap 15.3+ / Ubuntu 22.04+ LTS
 * Docker
 * kubectl 1.18+
 * ~2GB RAM (puede ser una Maquina Virtual)
@@ -46,8 +40,14 @@ Estructura
 
 Actualizar el Sistema Operativo
 
+SuSE
 ```
 sudo zypper up -y
+```
+
+Ubuntu
+```
+sudo apt-get update
 ```
 
 Reiniciar si se ha instalado una versión más reciente del kernel o systemd.
@@ -56,12 +56,12 @@ Reiniciar si se ha instalado una versión más reciente del kernel o systemd.
 sudo reboot; exit
 ```
 
-
-
 ### Docker
 
+Seguir la documentación oficial de [Docker-CE](https://docs.docker.com/engine/install/), para su distribución de Linux.
+
+
 ```
-sudo zypper install -y docker
 MY_USER=$(whoami) 
 sudo usermod -a -G docker ${MY_USER}
 sudo systemctl enable --now docker
@@ -73,7 +73,7 @@ Validar que el usuario actual pertenezca al grupo docker.
 id ${MY_USER}
 ```
 
-Debe de volver a iniciar sesión para que el cambio tome efecto.
+Debe de volver a iniciar sesión para que el cambio tome efecto. 
 
 ### kubectl
 
@@ -86,10 +86,17 @@ sudo chmod a+rx /usr/local/bin/kubectl
 
 Asegurese de tener instalado bash-completion o adapte las instrucciones para el shell que tenga en ejecución.
 
+SuSe
 ```
 sudo  zypper install -y bash-completion 
 
 ```
+Ubuntu
+```
+sudo apt-get install bash-completion
+```
+
+Autocompletación para kubectl
 
 ```
 sudo sh -c "kubectl completion bash > /etc/bash_completion.d/kubectl"
@@ -186,7 +193,7 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
 ```
 
-Se han deplegos los componentes de:
+Se han deplegado los componentes de:
 
 * Ingress Controller (traefik)
 * Metric server
@@ -230,7 +237,7 @@ kube-system   traefik-97b44b794-k9hks                   1/1     Running     0   
 
 # Operaciones con k3d
 
-## Lister clusters
+## Listar clusters
 
 ```
 k3d cluster list

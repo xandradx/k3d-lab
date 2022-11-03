@@ -25,7 +25,7 @@ namespace/demoapp01 created
 Podemos obterner la defición del recurso creado ejecutando:
 
 ```
-kubectl get namespace demoapp01
+kubectl get namespace demoapp01 -o yaml
 ```
 
 Salida del comando:
@@ -54,7 +54,15 @@ status:
 
 #### Declarativa
 
-En el directorio k8s/ encontrará el archivo ![namespace.yaml](k8s/namespace.yaml)
+Clone el siguiente repositorio: [Example App](https://github.com/xandradx/k8s-example.git)
+
+```sh
+git clone https://github.com/xandradx/k8s-example.git
+
+cd k8s-example 
+```
+
+En el directorio k8s/ encontrará el archivo 01-namespace.yaml
 
 Con el contenido:
 
@@ -67,7 +75,7 @@ metadata:
     name: demoapp01 #<--- Listado de etiquetas
 ```
 
-kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/01-namespace.yaml
 
 Salida del comando:
 
@@ -118,7 +126,7 @@ Y el la anotación ```kubectl.kubernetes.io/last-applied-configuration```, fue a
 
 Si tratamos de ejecutar de nuevo el comando, para aplicar los cambios:
 
-```kubectl apply -f k8s/namespace.yaml```
+```kubectl apply -f k8s/01-namespace.yaml```
 
 Salida del comando:
 ```
@@ -129,7 +137,7 @@ Notamos que no se ejecuta algún cambio, ya que el recurso creado en kubernetes 
 
 ### Actualizar un recurso de Kubernetes utilizando la forma declarativa
 
-Vamos a editar nuestro recurso ubicado en ```k8s/namespace.yaml``` y agregaremos otra etqueta.
+Vamos a editar nuestro recurso ubicado en ```k8s/01-namespace.yaml``` y agregaremos otra etqueta.
 
 ORIGINAL:
 
@@ -204,7 +212,7 @@ Utilizarremos la forma declarativa para crear estos recursos.
 
 ## Deployment
 
-```kubectl apply -f k8s/deployment.yaml```
+```kubectl apply -f k8s/02-deployment.yaml```
 
 Salida del comando:
 
@@ -227,7 +235,7 @@ Podemos observar que se creó el deployment app01 con 1 replica y 1/1 pods estan
 
 Podemos obterner la defición del recurso de tipo deployment creado en el namespace demoapp01, ejecuando:
 
-```kubectl get deployments.apps -o yaml app01 -n demoapp0```
+```kubectl get deployments.apps -o yaml app01 -n demoapp01```
 
 Se ha omitido la salida de este comando, deberá de mostrar la definición del recurso en formato yaml.
 
@@ -290,7 +298,7 @@ app01-XXXX-YYYY   1/1     Running   0          64s
 Podemos crear la definición del servicio a partir del deployment creado anteriormente para que tome las etiquetas de los pods creados y los utilice como "selector" para el servicio.
 
 
-```kubectl expose deployment app01 -n demoapp01 -o yaml --dry-run=client```
+```kubectl expose deployment app01 -n demoapp01 -o yaml --dry-run=client --port=8080```
 
 Salida del comando:
 
@@ -316,7 +324,7 @@ status:
 
 Esta es la definición del servicio, podemos almacenarla en k8s/service.yaml o utilizar el archivo de ejemplo.
 
-```kubectl apply -f k8s/service.yaml```
+```kubectl apply -f k8s/03-service.yaml```
 
 Salida del comando:
 
@@ -329,7 +337,7 @@ service/app01 unchanged
 Podemos crear la definición del ingress por medio del siguiente comando:
 
 
-```kubectl create ingress test -o yaml --dry-run=client  --rule="test.192.168.223.187.nip.io/*=app01:8080" -n demoapp01```
+```kubectl create ingress test -o yaml --dry-run=client  --rule="app01.YOUR_VM_IP.nip.io/*=app01:8080" -n demoapp01```
 
 
 La opción de creación del ingress esta compuesta por:
@@ -356,7 +364,7 @@ metadata:
   namespace: demoapp01
 spec:
   rules:
-  - host: app01.192.168.223.187.nip.io
+  - host: app01.YOUR_VM_IP.nip.io
     http:
       paths:
       - backend:
@@ -371,9 +379,9 @@ status:
 ```
 
 
-Esta es la definición del ingress, podemos almacenarla en k8s/ingress.yaml o utilizar el archivo de ejemplo.
+Esta es la definición del ingress, podemos almacenarla en k8s/ingress.yaml o utilizar el archivo de ejemplo (modificando el valor de host).
 
-```kubectl apply -f k8s/ingress.yaml```
+```kubectl apply -f k8s/04-ingress.yaml```
 
 Salida del comando:
 
@@ -387,7 +395,7 @@ ingress.networking.k8s.io/app01 created
 
 ## Curl
 
-```curl http://app01.192.168.223.187.nip.io:8080 | head```
+```curl http://app01.YOUR_VM_IP.nip.io:${PUBLISH_PORT} | head```
 
 Este puerto es el que definimos par el load Balancer de k3d
 
