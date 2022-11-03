@@ -74,9 +74,9 @@ metadata:
   labels: 
     name: demoapp01 #<--- Listado de etiquetas
 ```
-
+```
 kubectl apply -f k8s/01-namespace.yaml
-
+```
 Salida del comando:
 
 ```
