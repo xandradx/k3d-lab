@@ -166,7 +166,9 @@ metadata:
 
 ## Aplicamos los cambios
 
-```kubectl apply -f k8s/namespace.yaml```
+```
+kubectl apply -f k8s/namespace.yaml
+```
 
 Salida del comando:
 ```
@@ -214,7 +216,9 @@ Utilizarremos la forma declarativa para crear estos recursos.
 
 ## Deployment
 
-```kubectl apply -f k8s/02-deployment.yaml```
+```
+kubectl apply -f k8s/02-deployment.yaml
+```
 
 Salida del comando:
 
@@ -224,7 +228,9 @@ deployment.apps/app01 created
 
 Obtemos el listado de recursos de tipo deploymet creados en el namespace demoapp01
 
-```kubectl get deployments.apps -n demoapp01```
+```
+kubectl get deployments.apps -n demoapp01
+```
 
 Salida del comando:
 
@@ -243,7 +249,9 @@ Se ha omitido la salida de este comando, deberá de mostrar la definición del r
 
 Podemos obtener únicamente el atributo de ```kubectl.kubernetes.io/last-applied-configuratio```, ejecutando:
 
-```kubectl apply view-last-applied deployment/app01 -n demoapp01```
+```
+kubectl apply view-last-applied deployment/app01 -n demoapp01
+```
 
 Salida del comando:
 
@@ -285,7 +293,9 @@ Se deberá mostrar exacamente el mismo contenido del archivo de la definición d
 
 Obtenemos la información de los pods creados por el recurso de deployment en el namespace demoapp01
 
-```kubectl get pods -n demoapp01```
+```
+kubectl get pods -n demoapp01
+```
 
 Salida del comando:
 
@@ -300,7 +310,9 @@ app01-XXXX-YYYY   1/1     Running   0          64s
 Podemos crear la definición del servicio a partir del deployment creado anteriormente para que tome las etiquetas de los pods creados y los utilice como "selector" para el servicio.
 
 
-```kubectl expose deployment app01 -n demoapp01 -o yaml --dry-run=client --port=8080```
+```
+kubectl expose deployment app01 -n demoapp01 -o yaml --dry-run=client --port=8080
+```
 
 Salida del comando:
 
@@ -326,7 +338,9 @@ status:
 
 Esta es la definición del servicio, podemos almacenarla en k8s/service.yaml o utilizar el archivo de ejemplo.
 
-```kubectl apply -f k8s/03-service.yaml```
+```
+kubectl apply -f k8s/03-service.yaml
+```
 
 Salida del comando:
 
@@ -339,7 +353,9 @@ service/app01 unchanged
 Podemos crear la definición del ingress por medio del siguiente comando:
 
 
-```kubectl create ingress test -o yaml --dry-run=client  --rule="app01.YOUR_VM_IP.nip.io/*=app01:8080" -n demoapp01```
+```
+kubectl create ingress test -o yaml --dry-run=client  --rule="app01.YOUR_VM_IP.nip.io/*=app01:8080" -n demoapp01
+```
 
 
 La opción de creación del ingress esta compuesta por:
@@ -383,7 +399,9 @@ status:
 
 Esta es la definición del ingress, podemos almacenarla en k8s/ingress.yaml o utilizar el archivo de ejemplo (modificando el valor de host).
 
-```kubectl apply -f k8s/04-ingress.yaml```
+```
+kubectl apply -f k8s/04-ingress.yaml
+```
 
 Salida del comando:
 
@@ -397,7 +415,9 @@ ingress.networking.k8s.io/app01 created
 
 ## Curl
 
-```curl http://app01.YOUR_VM_IP.nip.io:${PUBLISH_PORT} | head```
+```
+curl http://app01.YOUR_VM_IP.nip.io:${PUBLISH_PORT} | head
+```
 
 Este puerto es el que definimos par el load Balancer de k3d
 
