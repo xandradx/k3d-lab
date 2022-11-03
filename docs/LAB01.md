@@ -137,7 +137,7 @@ Notamos que no se ejecuta algún cambio, ya que el recurso creado en kubernetes 
 
 ### Actualizar un recurso de Kubernetes utilizando la forma declarativa
 
-Vamos a editar nuestro recurso ubicado en ```k8s/01-namespace.yaml``` y agregaremos otra etqueta.
+Editamos nuestro recurso ubicado en ```k8s/01-namespace.yaml``` y agregaremos otra etqueta.
 
 ORIGINAL:
 
