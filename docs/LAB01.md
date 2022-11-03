@@ -139,6 +139,8 @@ Notamos que no se ejecuta algún cambio, ya que el recurso creado en kubernetes 
 
 Editamos nuestro recurso ubicado en ```k8s/01-namespace.yaml``` y agregaremos otra etqueta.
 
+Estos archivos estan en YAML, refierase a [YAML Tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started), si desea conocer más acerca de formato.
+
 ORIGINAL:
 
 ```yaml
