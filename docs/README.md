@@ -176,7 +176,7 @@ INFO[0028] You can now use it like this:
 kubectl cluster-info
 ```
 
-Validaar el nuevo cluster
+Validar el nuevo cluster
 
 ```
 kubectl cluster-info
