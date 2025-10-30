@@ -101,7 +101,7 @@ Autocompletación para kubectl
 ```
 kubectl completion bash > ~/.kubectl.comp
 source ~/.kubectl.comp
-echo "source ~/.kubectl.comp" > ~/.bash_profile
+echo "source ~/.kubectl.comp" >> ~/.bash_profile
 ```
 
 ### k3d
@@ -119,8 +119,9 @@ k3d es una herramienta diseñada para ejecutar fácilmente k3s en Docker, propor
  ***Autocompletación k3d***
 
 ```
-sudo sh -c "k3d completion bash > /etc/bash_completion.d/k3d"
-source /etc/bash_completion.d/k3d
+k3d completion bash > ~/.k3d.comp
+source ~/.k3d.comp
+echo "source ~/.k3d.comp" >> ~/.bash_profile
 ```
 
 # Creando mi primer cluster con k3d
