@@ -99,7 +99,7 @@ sudo apt-get install bash-completion
 Autocompletación para kubectl
 
 ```
-kubectl completion bash > ~/.kubectl.comp"
+kubectl completion bash > ~/.kubectl.comp
 source ~/.kubectl.comp
 echo "source ~/.kubectl.comp" > ~/.bash_profile
 ```
