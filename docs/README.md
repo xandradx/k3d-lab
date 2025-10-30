@@ -293,7 +293,10 @@ INFO[0000] Starting servers...
 ```
 
 
-## Eliminar clusters
+## Eliminar clusters 
+
+No elimine este cluster si quiere seguir ![la siguiente sección](LAB01.md) para publicar nuestra primera app en Kuberetes.
+
 
 ```
 k3d cluster delete cluster-demo
@@ -312,7 +315,6 @@ INFO[0000] Removing standalone kubeconfig file (if there is one)...
 INFO[0000] Successfully deleted cluster cluster-demo!
 ```
 
-No elimine este cluster si quiere seguir ![la siguiente sección](LAB01.md) para publicar nuestra primera app en Kuberetes.
 
 
 
