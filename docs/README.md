@@ -101,7 +101,7 @@ Autocompletación para kubectl
 ```
 kubectl completion bash > ~/.kubectl.comp"
 source ~/.kubectl.comp
-echo "source ~/.kubectl.comp" ~/.bash_profile
+echo "source ~/.kubectl.comp" > ~/.bash_profile
 ```
 
 ### k3d
