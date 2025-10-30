@@ -51,6 +51,11 @@ Ubuntu
 sudo apt-get update
 ```
 
+RHEL
+```
+sudo  dnf update -y  
+```
+
 Reiniciar si se ha instalado una versión más reciente del kernel o systemd.
 
 ```
@@ -95,6 +100,11 @@ sudo  zypper install -y bash-completion
 Ubuntu
 ```
 sudo apt-get install bash-completion
+```
+RHEL
+```
+sudo  dnf install -y bash-completion 
+
 ```
 
 Autocompletación para kubectl
