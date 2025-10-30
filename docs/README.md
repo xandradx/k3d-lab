@@ -13,6 +13,7 @@ git clone https://github.com/xandradx/k3d-lab.git
 * Docker
 * kubectl 1.18+
 * ~2GB RAM (puede ser una Maquina Virtual)
+* git
 
 ## k3s 
 * Distribución de Kubernetes liviana (k3s vs k8s)
