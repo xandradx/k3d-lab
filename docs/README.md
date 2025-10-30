@@ -251,7 +251,7 @@ cluster-demo   1/1       2/2      true
 helloworld     3/3       3/2      true
 ```
 
-En nueestro ejemplo hay 2 clusters (helloworl y cluster-demo)
+En nueestro ejemplo hay 2 clusters (helloworld y cluster-demo)
 
 ## Detener clusters
 
