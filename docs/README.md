@@ -9,7 +9,7 @@ git clone https://github.com/xandradx/k3d-lab.git
 
 ## Requerimientos 
 
-* OpenSuse Leap 15.3+ / Ubuntu 22.04+ LTS
+* OpenSuse Leap 15.3+ / Ubuntu 22.04+ LTS / RHEL 8+
 * Docker
 * kubectl 1.18+
 * ~2GB RAM (puede ser una Maquina Virtual)
