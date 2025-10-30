@@ -1,8 +1,0 @@
-site_name: k3d Lab
-site_dir: site
-theme:
-  name: readthedocs
-nav:
-  - Home: 'README.md'
-  - Lab 01: 'LAB01.md'
-  - Lab 02: 'LAB02.md'
