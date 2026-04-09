@@ -40,7 +40,9 @@ app01-6fb8c9d6-bzzkr   1/1     Running   0          2m1s
 
 Vamos a utilizar la forma imperativa para cambiar la cantidad de replicas a ```2```.
 
-```kubectl scale --replicas=2 deployment/app01 -n demoapp01```
+```
+kubectl scale --replicas=2 deployment/app01 -n demoapp01
+```
 
 Salida:
 ```
