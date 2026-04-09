@@ -84,7 +84,10 @@ Debe de volver a iniciar sesión para que el cambio tome efecto.
 ### kubectl
 
 ```
-sudo curl -L -o /usr/local/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" 
+
+ARCH=amd64 # Puede ser amd64 o arm64 depende de su procesador.
+
+sudo curl -L -o /usr/local/bin/kubectl "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/${ARCH}/kubectl" 
 sudo chmod a+rx /usr/local/bin/kubectl
 ```
 
