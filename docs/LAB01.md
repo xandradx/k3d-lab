@@ -448,6 +448,10 @@ Obtener información del App (Versión)
 ```
 curl -s http://app01.YOUR_VM_IP.nip.io:${PUBLISH_PORT} |grep navbar-brand
 ```
+Salida:
+```
+  </button><a class="navbar-brand" href="/index">Demo v1.0</a>
+```
 
 Este puerto es el que definimos par el load Balancer de k3d
 
