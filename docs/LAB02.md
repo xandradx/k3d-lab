@@ -188,6 +188,17 @@ Nota: Por defecto se utiliza la estrategía de actualización ```rollingUpdate``
 kubectl rollout status deployment -n demoapp01 app01
 ```
 
+Validar la versión del APP deplegada
+
+```
+curl -s http://app01.YOUR_VM_IP.nip.io:${PUBLISH_PORT} |grep navbar-brand
+```
+
+Salida:
+```
+  </button><a class="navbar-brand" href="/index">Demo v1.1</a>
+```
+
 
 Siga con ![la siguiente sección](LAB03.md) para aprender a habilitar probes.
 
