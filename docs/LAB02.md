@@ -55,7 +55,9 @@ Tome nota que este cambio no fue registrado en el archivo de definición del rec
 
 ## Validando cambio en estado actual contra la definición del recurso
 
-```kubectl diff -f k8s/02-deployment.yaml```
+```
+kubectl diff -f k8s/02-deployment.yaml
+```
 
 Salida:
 
