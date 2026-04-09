@@ -208,6 +208,28 @@ status:
 Notamos los cambios aplicados con una nueva etiqueta: ```lab: lab01``` y la actualización de la anotación ```
 kubectl.kubernetes.io/last-applied-configuration```
 
+# Busqueda de recursos por etiquetas
+
+Podemos utilizar las etiquetas para listar recursos dentro del cluster utilizando estos filtros.
+
+Listar los recursos tipo namespace que contengan la etiqueta:
+
+```yaml
+lab: lab01
+```
+
+```sh
+kubectl get ns --selector lab=lab01
+```
+Debe listar únicamente los recursos que cumplan con el selector.
+
+Salida del comando:
+
+```
+NAME        STATUS   AGE
+demoapp01   Active   2m39s
+```
+
 # Creación de nuestra APP de Demo
 
 Esta aplicación esta creado en python y utliza Flask
