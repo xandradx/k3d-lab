@@ -12,7 +12,7 @@
 Modificar el archivo:
 
 ```bash
-k8s/k8s/02-deployment.yaml
+k8s/02-deployment.yaml
 ```
 
 Con el siguiente contenido:
