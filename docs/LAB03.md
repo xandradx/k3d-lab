@@ -167,5 +167,4 @@ kubectl get events -n demoapp01 --sort-by=.metadata.creationTimestamp
 
 
 
-- comprobar cómo Kubernetes decide cuándo enviar tráfico y cuándo reiniciar contenedores
 
