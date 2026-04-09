@@ -83,7 +83,6 @@ diff -u -N /tmp/LIVE-1639003980/apps.v1.Deployment.demoapp01.app01 /tmp/MERGED-3
    revisionHistoryLimit: 10
    selector:
      matchLabels:
-...
  ```
 
 La salida ha sido recortada, puede observar que se muestran los cambios que existen entre el estado actual y la definición del recurso
