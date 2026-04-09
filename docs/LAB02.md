@@ -18,7 +18,9 @@ spec:
 Aplique los cambios:
 
 
-```kubectl apply -f k8s/02-deployment.yaml```
+```
+kubectl apply -f k8s/02-deployment.yaml
+```
 
 Salida:
 ```
@@ -27,7 +29,9 @@ deployment.apps/app01 configured
 
 Puede validar la cantidas de pods en el namespace demoapp01.
 
-```kubectl get pods -n demoapp01```
+```
+kubectl get pods -n demoapp01
+```
 
 Salida:
 
@@ -125,6 +129,49 @@ La opción ``--diff`` utilizando en el comando ```kubectl```, nos devuelve ```0`
 
 Se hace uso de esta caracteristica en nuestros pipelines en el proceso de Integración y Despliegue continuo (CI/CD) así como en GitOps en la detención de cambios.
 
+# Actualizando Versión de imagen
 
+Edite la definición del recurso deployment ```k8s/02-deployment.yaml``` y cambie la versión de la imagen del contenedor ```democontainerapp``` a ```quay.io/jandrade/democontainerapp:v1.1```.
+
+Y aplique nuevamente los cambios al deployment.
+
+## Validando cambio en estado actual contra la definición del recurso
+
+```
+kubectl diff -f k8s/02-deployment.yaml
+```
+
+Salida:
+```
+diff -u -N /tmp/LIVE-4149294283/apps.v1.Deployment.demoapp01.app01 /tmp/MERGED-2654318114/apps.v1.Deployment.demoapp01.app01
+--- /tmp/LIVE-4149294283/apps.v1.Deployment.demoapp01.app01	2026-04-09 19:42:15.389522108 +0000
++++ /tmp/MERGED-2654318114/apps.v1.Deployment.demoapp01.app01	2026-04-09 19:42:15.389522108 +0000
+@@ -6,7 +6,7 @@
+     kubectl.kubernetes.io/last-applied-configuration: |
+       {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"app01"},"name":"app01","namespace":"demoapp01"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"app01"}},"strategy":{},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app01"}},"spec":{"containers":[{"image":"quay.io/jandrade/democontainerapp:v1.0","name":"democontainerapp","resources":{"limits":{"cpu":100,"memory":"128Mi"},"requests":{"cpu":"10m","memory":"10Mi"}}}]}}}}
+   creationTimestamp: "2026-04-09T19:16:30Z"
+-  generation: 9
++  generation: 10
+   labels:
+     app: app01
+   name: app01
+@@ -32,7 +32,7 @@
+         app: app01
+     spec:
+       containers:
+-      - image: quay.io/jandrade/democontainerapp:v1.0
++      - image: quay.io/jandrade/democontainerapp:v1.1
+         imagePullPolicy: IfNotPresent
+         name: democontainerapp
+         resources:
+```
+
+Puede observar el cambio del tag de la imagen.
+
+Aplique nuevamente los cambios al deployment.
+
+```
+kubectl apply -f k8s/deployment.yaml
+```
 
 
