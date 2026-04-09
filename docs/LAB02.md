@@ -189,4 +189,5 @@ kubectl rollout status deployment -n demoapp01 app01
 ```
 
 
+Siga con ![la siguiente sección](LAB03.md) para aprender a habilitar probes.
 
