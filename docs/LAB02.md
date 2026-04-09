@@ -198,6 +198,9 @@ Salida:
 ```
   </button><a class="navbar-brand" href="/index">Demo v1.1</a>
 ```
+## Browser
+
+![Test Page](./images/appv11.png)
 
 
 Siga con ![la siguiente sección](LAB03.md) para aprender a habilitar probes.
