@@ -123,7 +123,7 @@ Salida:
 
 La opción ``--diff`` utilizando en el comando ```kubectl```, nos devuelve ```0``` cuando no hay cambios y ```1``` cuando estos existen.
 
-Podemos utilizar esta caracteristica en nuestros pipelines en el proceso de Integración y Despliegue continuo (CI/CD) así como en GitOps en la detención de cambios.
+Se hace uso de esta caracteristica en nuestros pipelines en el proceso de Integración y Despliegue continuo (CI/CD) así como en GitOps en la detención de cambios.
 
 
 
