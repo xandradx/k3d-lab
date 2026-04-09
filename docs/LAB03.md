@@ -26,7 +26,7 @@ metadata:
   name: app01
   namespace: demoapp01
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: app01
