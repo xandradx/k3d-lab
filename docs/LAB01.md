@@ -443,6 +443,12 @@ ingress.networking.k8s.io/app01 created
 curl http://app01.YOUR_VM_IP.nip.io:${PUBLISH_PORT} | head
 ```
 
+Obtener información del App (Versión)
+
+```
+curl -s http://app01.YOUR_VM_IP.nip.io:${PUBLISH_PORT} |grep navbar-brand
+```
+
 Este puerto es el que definimos par el load Balancer de k3d
 
 Salida del comando:
