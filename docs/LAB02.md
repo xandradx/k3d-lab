@@ -62,10 +62,27 @@ kubectl diff -f k8s/02-deployment.yaml
 Salida:
 
 ```
-diff -u -N /tmp/LIVE-756925402/apps.v1.Deployment.demoapp01.app01 /tmp/MERGED-036821873/apps.v1.Deployment.demoapp01.app01
---- /tmp/LIVE-756925402/apps.v1.Deployment.demoapp01.app01	2021-11-04 22:16:24.764635425 +0000
-+++ /tmp/MERGED-036821873/apps.v1.Deployment.demoapp01.app01	2021-11-04 22:16:24.764635425 +0000
+diff -u -N /tmp/LIVE-1639003980/apps.v1.Deployment.demoapp01.app01 /tmp/MERGED-3052297133/apps.v1.Deployment.demoapp01.app01
+--- /tmp/LIVE-1639003980/apps.v1.Deployment.demoapp01.app01	2026-04-09 19:27:27.669977009 +0000
++++ /tmp/MERGED-3052297133/apps.v1.Deployment.demoapp01.app01	2026-04-09 19:27:27.669977009 +0000
 @@ -6,7 +6,7 @@
+     kubectl.kubernetes.io/last-applied-configuration: |
+       {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"app01"},"name":"app01","namespace":"demoapp01"},"spec":{"replicas":3,"selector":{"matchLabels":{"app":"app01"}},"strategy":{},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"app01"}},"spec":{"containers":[{"image":"quay.io/jandrade/democontainerapp:v1.0","name":"democontainerapp","resources":{"limits":{"cpu":100,"memory":"128Mi"},"requests":{"cpu":"10m","memory":"10Mi"}}}]}}}}
+   creationTimestamp: "2026-04-09T19:16:30Z"
+-  generation: 6
++  generation: 7
+   labels:
+     app: app01
+   name: app01
+@@ -15,7 +15,7 @@
+   uid: 6d485b1a-1234-4984-a259-05e166d623aa
+ spec:
+   progressDeadlineSeconds: 600
+-  replicas: 2
++  replicas: 3
+   revisionHistoryLimit: 10
+   selector:
+     matchLabels:
 ...
  ```
 
