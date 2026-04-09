@@ -180,7 +180,7 @@ Obtenemos la información de los pods creados por el recurso de deployment en el
 watch kubectl get pods -n demoapp01 
 ```
 
-Puede observar que se van actualizando el estado de los pods para aplicar el cambio requerido. Puede cancelar el comando con ```Ctrl+C```.
+Puede observar que se actualiza el estado de los pods para aplicar el cambio requerido. Puede cancelar el comando presionando ```Ctrl+C```.
 
 Nota: Por defecto se utiliza la estrategía de actualización ```rollingUpdate```. Alternativamente puede validar el estado del depliegue utilizando:
 
