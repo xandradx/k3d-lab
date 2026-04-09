@@ -1,4 +1,4 @@
-# LAB03 - Habilitando Readiness Probe y Liveness Probe
+# Habilitando Readiness Probe y Liveness Probe
 
 
 ## Tipos básicos de Pruebas
