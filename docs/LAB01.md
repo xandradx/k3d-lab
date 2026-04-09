@@ -265,7 +265,9 @@ Podemos observar que se creó el deployment app01 con 1 replica y 1/1 pods estan
 
 Podemos obterner la defición del recurso de tipo deployment creado en el namespace demoapp01, ejecuando:
 
-```kubectl get deployments.apps -o yaml app01 -n demoapp01```
+```
+kubectl get deployments.apps -o yaml app01 -n demoapp01
+```
 
 Se ha omitido la salida de este comando, deberá de mostrar la definición del recurso en formato yaml.
 
