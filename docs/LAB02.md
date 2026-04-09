@@ -92,7 +92,9 @@ Edite la definición del recurso colocando las cantidad de replicas en ```2```.
 
 Y aplique nuevamente los cambios al deployment.
 
-```kubectl apply -f k8s/deployment.yaml```
+```
+kubectl apply -f k8s/deployment.yaml
+```
 
 Salida:
 
@@ -102,13 +104,17 @@ deployment.apps/app01 configured
 
 Puede volver a consultar las diferencias entre los estados con el comando anterior:
 
-```kubectl diff -f k8s/deployment.yaml```
+```
+kubectl diff -f k8s/deployment.yaml
+```
 
 La salida estará vacía.
 
 Puede consultar el código de salida del comando anterior.
 
-```echo $?```
+```
+echo $?
+```
 
 Salida:
 ```
