@@ -1,11 +1,5 @@
 # k3d-lab
 
-Clonar este repositorio
-
-```bash
-git clone https://github.com/xandradx/k3d-lab.git
-```
-
 
 ## Requerimientos 
 
