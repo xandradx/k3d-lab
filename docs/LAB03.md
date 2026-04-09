@@ -117,7 +117,8 @@ kubectl get pods -n demoapp01
 Luego describir uno:
 
 ```bash
-kubectl describe pod <pod_name> -n demoapp01
+POD_NAME=$(kubectl get pods --selector=app=app01 -n demoapp01 -o jsonpath="{.items[0].metadata.name})
+kubectl describe pod ${POD_NAME} -n demoapp01
 ```
 
 Debe mostrar algo similar a esto:
