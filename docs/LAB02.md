@@ -174,4 +174,19 @@ Aplique nuevamente los cambios al deployment.
 kubectl apply -f k8s/deployment.yaml
 ```
 
+Obtenemos la información de los pods creados por el recurso de deployment en el namespace demoapp01 y monitoreamos sus cambios.
+
+```
+watch kubectl get pods -n demoapp01 
+```
+
+Puede observar que se van actualizando el estado de los pods para aplicar el cambio requerido. Puede cancelar el comando con ```Ctrl+C```.
+
+Nota: Por defecto se utiliza la estrategía de actualización ```rollingUpdate```. Alternativamente puede validar el estado del depliegue utilizando:
+
+```
+kubectl rollout status deployment -n demoapp01 app01
+```
+
+
 
