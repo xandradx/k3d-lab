@@ -80,7 +80,6 @@ kubectl apply -f k8s/02-deployment.yaml
 ```
 
 
-
 ## Validar el deployment
 
 ```bash
@@ -96,7 +95,7 @@ kubectl describe deployment app01 -n demoapp01
 kubectl get pods -n demoapp01
 ```
 
-Salida esperada similar:
+Salida esperada:
 
 ```bash
 NAME                     READY   STATUS    RESTARTS   AGE
@@ -114,22 +113,23 @@ Primero obtener el nombre del pod:
 kubectl get pods -n demoapp01
 ```
 
-Luego describir uno:
+Describir recurso tipo ```pod``` del ```deployment``` actualizado:
 
 ```bash
 POD_NAME=$(kubectl get pods --selector=app=app01 -n demoapp01 -o jsonpath="{.items[0].metadata.name}")
 kubectl describe pod ${POD_NAME} -n demoapp01
 ```
 
-Debe mostrar algo similar a esto:
-
+Salida esperada:
 ```bash
+...
 Readiness:  http-get http://:8080/ delay=5s timeout=2s period=5s #success=1 #failure=3
 Liveness:   http-get http://:8080/ delay=15s timeout=2s period=10s #success=1 #failure=3
+...
 ```
 
 
-## Ver eventos relacionados
+## Mostrar eventos relacionados
 
 ```bash
 kubectl get events -n demoapp01 --sort-by=.metadata.creationTimestamp
