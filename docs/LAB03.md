@@ -1,12 +1,5 @@
 # LAB03 - Habilitando Readiness Probe y Liveness Probe
 
-## Objetivo
-
-En este laboratorio modificaremos el resurso tipo `Deployment`, ```k8s/02-deployment.yaml``` base para habilitar:
-
-- `readinessProbe`
-- `livenessProbe`
-
 
 ## Tipos básicos de Pruebas
 
